@@ -1,0 +1,154 @@
+:root {
+    --gold: #B8860B; /* Un Or légèrement plus sombre pour bien ressortir sur fond blanc */
+    --text-main: #2C3E50; /* Gris anthracite très élégant */
+    --text-dim: #7F8C8D; /* Gris clair pour les descriptions */
+    --bg-color: #F8F9FA; /* Blanc cassé très pur */
+    --glass-bg: rgba(255, 255, 255, 0.7); /* Verre blanc translucide */
+    --glass-border: rgba(255, 255, 255, 1); /* Bordure blanche pure */
+    --shadow: rgba(31, 38, 135, 0.08); /* Ombre très douce et bleutée */
+}
+
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Effet de lumière douce en arrière-plan */
+.bg-glow {
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(255,255,255,0) 70%);
+    filter: blur(60px);
+    z-index: -1;
+}
+
+/* En-tête */
+.hero {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+/* Conteneur principal */
+.menu-container {
+    padding: 0 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Effet Verre Clair (Light Glassmorphism) */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 32px var(--shadow);
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+    padding-bottom: 10px;
+}
+
+/* Lignes de produits */
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.menu-item:last-child {
+    margin-bottom: 0;
+}
+
+.item-text h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.item-text p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    padding-right: 15px;
+}
+
+.item-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+.spacer {
+    height: 100px; /* Espace pour la navigation du bas */
+}
+
+/* Barre de navigation mobile claire (Bottom Bar) */
+.bottom-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 1.5;
+    transition: color 0.3s;
+    font-weight: 600;
+}
+
+.bottom-nav a:hover, .bottom-nav a:active {
+    color: var(--gold);
+}
